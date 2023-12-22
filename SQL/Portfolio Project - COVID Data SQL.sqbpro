@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="/Users/harrysamra/Documents/Work Own/Data Portfolio/SQL/Analysis and Exploration/COVID/Portfolio Project - COVID Data.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="7035"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,17:mainCovidVaccinations"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="CovidDeaths" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="54"/><column index="2" value="57"/><column index="3" value="207"/><column index="4" value="72"/><column index="5" value="67"/><column index="6" value="68"/><column index="7" value="64"/><column index="8" value="122"/><column index="9" value="74"/><column index="10" value="70"/><column index="11" value="127"/><column index="12" value="132"/><column index="13" value="128"/><column index="14" value="186"/><column index="15" value="137"/><column index="16" value="134"/><column index="17" value="191"/><column index="18" value="102"/><column index="19" value="73"/><column index="20" value="136"/><column index="21" value="82"/><column index="22" value="146"/><column index="23" value="129"/><column index="24" value="193"/><column index="25" value="139"/><column index="26" value="203"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="CovidVaccinations" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="168"/><column index="2" value="57"/><column index="3" value="185"/><column index="4" value="72"/><column index="5" value="65"/><column index="6" value="61"/><column index="7" value="142"/><column index="8" value="138"/><column index="9" value="118"/><column index="10" value="196"/><column index="11" value="76"/><column index="12" value="88"/><column index="13" value="89"/><column index="14" value="104"/><column index="15" value="106"/><column index="16" value="134"/><column index="17" value="84"/><column index="19" value="157"/><column index="20" value="176"/><column index="21" value="178"/><column index="22" value="206"/><column index="23" value="156"/><column index="24" value="221"/><column index="25" value="190"/><column index="26" value="262"/><column index="27" value="97"/><column index="28" value="108"/><column index="29" value="71"/><column index="30" value="86"/><column index="31" value="85"/><column index="32" value="89"/><column index="33" value="96"/><column index="34" value="126"/><column index="35" value="116"/><column index="36" value="93"/><column index="37" value="83"/><column index="38" value="127"/><column index="39" value="159"/><column index="40" value="90"/><column index="41" value="150"/><column index="42" value="209"/><column index="43" value="158"/><column index="44" value="97"/><column index="45" value="222"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">-- selecting the two tables of data that I am going to start with 
+
+SELECT *
+FROM
+	CovidDeaths
+WHERE
+	continent is not NULL
+ORDER BY
+	continent, location
+	
+SELECT *
+FROM
+	CovidVaccinations
+WHERE
+	continent is not NULL
+ORDER BY
+	continent, location
+	
+-- 1) What coutnry has reported the highest death count
+-- calculated using the max death count 
+
+SELECT
+	location,
+	max(total_deaths) AS TotalDeathCount
+FROM
+	CovidDeaths
+WHERE
+	continent is not NULL
+GROUP BY
+	location
+ORDER BY
+	TotalDeathCount DESC
+	
+-- 2) What continent has the highest death count?
+-- calculated using the the max death count. continent wide counts are registered in the location field, income areas have also been filtered out 
+
+SELECT
+	location,
+	MAX(total_deaths) as TotalDeathCount
+FROM
+	CovidDeaths
+WHERE
+	continent is NULL and location not like '%income%'
+GROUP BY 
+	location
+ORDER BY 
+	TotalDeathCount DESC
+	
+-- 3) What is the likelyhood of you dying if you contract COVID in a certain country on any given day?
+-- Calculated as a death rate with (deaths/cases) * 100
+
+SELECT
+	location,
+	Date,
+	total_cases,
+	total_deaths,
+	(total_deaths/total_cases)*100 AS  DeathPercentage
+FROM
+	CovidDeaths
+WHERE
+	continent is not NULL
+ORDER BY 
+	location, date
+	
+-- 4) What is the likelyhood of you being hospitalised if you contract COVID in the United Kingdom each day since reporting started
+-- Calculated as a hospitalisation rate with (hosp_patients/ total_cases) * 100, 
+
+SELECT
+	location,
+	date,
+	total_cases,
+	hosp_patients,
+	(hosp_patients/total_cases)*100 AS HospitalisationRate
+FROM
+	CovidDeaths
+WHERE
+	continent is not NULL AND location = 'United Kingdom'
+ORDER BY 
+	date
+	
+-- 5) What were the infection rates of any given country as a percentage of their population on any given day?
+-- Calculated as an infection rate with (total cases/ population) * 100
+
+SELECT
+	location,
+	date,
+	population,
+	(total_cases/population)*100 AS InfectionRate
+FROM
+	CovidDeaths
+WHERE 
+	continent is not NULL
+ORDER BY 
+	location, date
+	
+-- 6) What was the peak infection rate as a percentage of population for each country and when did it happen?
+-- Calulated by finding the max number of reported cases, what that would be as a percetage of the population and then grouping by country 
+
+SELECT
+	location,
+	date,
+	max(total_cases) AS HighestTotalCases,
+	max((total_cases/population)*100) AS HighestInfectionRate
+FROM
+	CovidDeaths
+WHERE
+	continent is not NULL AND total_cases is not NULL
+GROUP BY
+	location
+ORDER BY 
+	HighestInfectionRate DESC
+	
+-- 7) What is the global death rate?
+-- this is calculated using the sum aggregate of the new cases and deaths
+
+SELECT
+	location,
+	sum(new_cases) as TotalCases,
+	sum(new_deaths) as TotalDeaths,
+	(sum(new_deaths)/sum(new_cases))*100 as TotalDeathRate
+FROM
+	CovidDeaths
+WHERE
+	location = 'World'
+	
+-- 8)  When did the UK start reporting vaccinations, how many new vaccinations were then subsequently adminsitered each day and what was the rolling count?
+-- This will use an inner join on both tables and the window function OVER to display a rolling count 
+
+SELECT 
+	dea.continent,
+	dea.location,
+	dea.date,
+	dea.population,
+	vac.new_vaccinations,
+	sum(vac.new_vaccinations) OVER (PARTITION BY dea.location ORDER BY dea.location, dea.date) AS RollingVaccinationCount
+FROM
+	CovidDeaths as dea
+JOIN
+	CovidVaccinations as vac 
+ON
+	dea.location = vac.location
+	AND
+	dea.date = vac.date
+WHERE
+	dea.continent is not NULL
+	AND
+	dea.location = 'United Kingdom'
+	AND
+	vac.new_vaccinations is not NULL
+ORDER BY
+	dea.continent and dea.date
+	
+-- 9) Add to the table above what the roling vaccinated count is as a percentage of the population
+-- This will be done using a CTE as adding this additional new field would require running an arithmetic fuction off of an existing aggregate function which would produce an error, the CTE eliminates this through its creation of a temporary TABLE
+
+WITH RollingVac AS
+(
+SELECT 
+	dea.continent,
+	dea.location,
+	dea.date,
+	dea.population,
+	vac.new_vaccinations,
+	sum(vac.new_vaccinations) OVER (PARTITION BY dea.location ORDER BY dea.location, dea.date) AS RollingVaccinationCount
+FROM
+	CovidDeaths as dea
+JOIN
+	CovidVaccinations as vac 
+ON
+	dea.location = vac.location
+	AND
+	dea.date = vac.date
+WHERE
+	dea.continent is not NULL
+	AND
+	dea.location = 'United Kingdom'
+	AND
+	vac.new_vaccinations is not NULL
+)
+SELECT *,
+	(RollingVaccinationCount/population)*100 AS RollingVaccinationAsPercentagePopulation
+FROM
+	RollingVac
+	
+
+-- 10) Creating a view to store  the Hospitalisation Rate for the UK
+-- leveraging the create view function
+
+Create VIEW UKHospitalisationRate as
+SELECT
+	location,
+	date,
+	total_cases,
+	hosp_patients,
+	(hosp_patients/total_cases)*100 AS HospitalisationRate
+FROM
+	CovidDeaths
+WHERE
+	continent is not NULL AND location = 'United Kingdom'
+ORDER BY 
+	date
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
