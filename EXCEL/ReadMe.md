@@ -5,10 +5,13 @@
 In this project I demonstrated a strong grasp of the essential skills of Excel, including
 
 - Data Cleaning
-- Aggregate and Arithmateic Functions
+- Data Type Formatting
+- Find and Replace
+- Conditional Formatting
 - Logic Functions
 - Pivot Tables
-- Data Visualisation
+- Data Visualisation with Dashboards
+- Slicers
 
 ## Data Cleaning Steps
 1.	Formatted as table including headers. This is to see our full range of values in each field without having to scroll
