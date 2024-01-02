@@ -1,6 +1,16 @@
-## Data Cleaning in Excel – Cycle Shop Sales Analysis
+# Data Cleaning in Excel – Cycle Shop Sales Analysis
 
-### Data Cleaning Steps
+## Summary of Skills
+
+In this project I demonstrated a strong grasp of the essential skills of Excel, including
+
+- Data Cleaning
+- Aggregate and Arithmateic Functions
+- Logic Functions
+- Pivot Tables
+- Data Visualisation
+
+## Data Cleaning Steps
 1.	Formatted as table including headers. This is to see our full range of values in each field without having to scroll
 2.	Apply conditional formatting to the ID field to highlight duplicates. This is because the ID field should be the unique field and thus will show if any entries have been entered multiple times 
 3.	Remove duplicates in ID field through remove duplicates function. This will ensure no duplicate values affect subsequent calculations
