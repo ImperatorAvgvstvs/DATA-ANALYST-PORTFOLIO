@@ -151,7 +151,7 @@ ORDER BY
 	dea.continent and dea.date
 	
 -- 9) Add to the table above what the roling vaccinated count is as a percentage of the population
--- This will be done using a CTE as adding this additional new field would require running an arithmetic fuction off of an existing aggregate function which would produce an error, the CTE eliminates this through its creation of a temporary TABLE
+-- This will be done using a CTE as adding this additional new field would require running an arithmetic fuction off of an existing aggregate function which would produce an error, the CTE eliminates this.
 
 WITH RollingVac AS
 (
