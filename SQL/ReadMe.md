@@ -1,5 +1,7 @@
 # SQL Projects
 
+**Please note all projects are completed in SQLite**
+
 Welcome to the SQL section of the Data Portfolio, here you can find various different projects including:
 
 ## Data Exploration of the COVID-19 Pandemic
