@@ -13,7 +13,7 @@ Here I demonstrate proficency in the following SQL skills
 - Joins
 - View Creations
 - Nested Queries
-- CTE's and Virtual Tables
+- CTEs
 
 ## Questions
 
