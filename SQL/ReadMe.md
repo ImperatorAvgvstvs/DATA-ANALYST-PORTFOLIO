@@ -14,7 +14,7 @@ This Data set was provided by the *Our World In Data* Project supported by the U
 
 Edouard Mathieu, Hannah Ritchie, Lucas Rodés-Guirao, Cameron Appel, Charlie Giattino, Joe Hasell, Bobbie Macdonald, Saloni Dattani, Diana Beltekian, Esteban Ortiz-Ospina and Max Roser (2020) - "Coronavirus Pandemic (COVID-19)". Published online at OurWorldInData.org. Retrieved from: 'https://ourworldindata.org/coronavirus' [Online Resource]
 
-## Data Analysis of the history of Reported Global Terrorism Incidents
+## Data Analysis of the History of Reported Global Terrorism Incidents
 
 ## **Summary**
 This Project explores the Global Terrorism Database (GTD), an open-source database recording information on terrorist attacks around the world from 1970 to 2017 (except 1993). The GTD includes systematic data on domestic and international terrorist incidents that have occurred during this time period and now includes more than 180,000 attacks.
