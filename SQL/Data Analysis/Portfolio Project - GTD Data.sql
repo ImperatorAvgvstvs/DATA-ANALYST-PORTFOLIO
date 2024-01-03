@@ -26,7 +26,7 @@ ORDER BY
 LIMIT
 	10
 
--- Top 10 countrie with the most terrorist attacks 1970-2017
+-- Top 10 countries with the most terrorist attacks 1970-2017
 
 SELECT
 	country_txt AS 'Country',
@@ -96,7 +96,7 @@ GROUP BY
 ORDER BY
 	iyear
 	
--- Top 10 cities in the UK with the most terrorist attacks this time period
+-- Top 10 cities in the UK with the most terrorist attacks 1970-2017
 
 SELECT
 	city AS 'City',
@@ -114,7 +114,7 @@ ORDER BY
 LIMIT 
 	10
 	
---  How many attacks have there been in Londonderry, Belfast and London each year, provide a rolling count for each year
+--  In the last 20 years how many attacks have there been in Londonderry, Belfast and London each year, provide a rolling count for each year
 
 SELECT
 	city AS 'City',
@@ -256,7 +256,7 @@ SELECT
 	idate AS 'Date',
 	city AS 'City',
 	attacktype1_txt AS 'AttackType',
-	weapsubtype1_txt AS 'Weapon',
+	weaptype1_txt AS 'Weapon',
 	nkill AS 'Fatalities',
 	nwound AS 'Wounded',
 	summary AS 'Summary'
