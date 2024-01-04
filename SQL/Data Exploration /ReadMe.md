@@ -7,7 +7,8 @@ Here I demonstrate proficency in the following SQL skills
 - Field Data Formatting
 - Aggregate Functions
 - Date Time Functions
-- Logical Functions
+- Logical Operators
+- Arithmetic Operators
 - Window Functions
 - Aliases
 - Joins
