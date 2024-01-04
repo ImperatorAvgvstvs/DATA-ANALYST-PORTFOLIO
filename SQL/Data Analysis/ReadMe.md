@@ -36,5 +36,5 @@ The following insights were gleaned from an analysis of the data set:
 - Frequency of Weapon Type used in Terroirst Attacks in the UK the last 20 years
 - Average Fatality by Weapon type in the last 20 years
 - What proportion of Terrorist Attacks have been successful in the UK in the last 20 Years
-- -What were the 10 Deadliest Attacks in this period in the UK 1970-2017
+- What were the 10 Deadliest Attacks in this period in the UK 1970-2017
 - Creating a view for the above
