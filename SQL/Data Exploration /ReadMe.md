@@ -39,4 +39,4 @@ Here I attempt to answer the following questions from the data set:
 9. Add to the table above what the roling vaccinated count is as a percentage of the population
 - Percentages were added to the table by calculating the percentage from a CTE used to provide the rollong count table
 10. Can you create a view to store the Hospitalisation Rate for the UK?
-- visulaisation created
+- Visulaisation created
