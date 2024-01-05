@@ -1,4 +1,4 @@
-![image](https://github.com/ImperatorAvgvstvs/DATA-ANALYST-PORTFOLIO/assets/92328241/3a09e912-2737-425f-ad74-f43a4c28a360)# Tableau Project
+# Tableau Project
 
 Welcome to the Tableau section of the Data Portfolio, here you can find the following project:
 
