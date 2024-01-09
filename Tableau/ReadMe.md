@@ -37,7 +37,7 @@ Also used in the creation of this data was a .shp file provided by the Great Lon
 - Line Forecast Chart of the Sum of Offences by Month
 8.	Assemble as a Dashboard and Publish
 
-### **Insights**
+### Insights
 
 The Following Insights were gleaned from the dashboard:
 
