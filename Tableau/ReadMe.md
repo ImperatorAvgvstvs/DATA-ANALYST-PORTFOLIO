@@ -7,6 +7,8 @@ Welcome to the Tableau section of the Data Portfolio, here you can find the foll
 ### **Summary**
 This Project aims to create a dashboard that displays a number of key data visualisations regarding the crime statistics in London in the Period of April 2023 - November 2023. The Met Police already publishes a dashboard which details aspects of crime in london, but is aimed for public use. Here I seek to create a modified version of this which would be more orientated towards interanl use and includes visualisations of distribution of offences by, Borough, Type and Month. Specifically with regards to charting total crime in London over time, I have sought to make this visual more useful by incorporating a Process Behaviour Chart with a set of Upper and Lower Limits with an adjustable standard deviation filter so statistically significant months could be filtered at user discretion. Moreover, this dashboard incoporates Predictive Data Analytics in order to Forecast upcoming crime levels over the coming months based on historic data.
 
+**Link to dashboard** https://public.tableau.com/app/profile/harry.samra/viz/PortfolioProject-LondonCrime/PortfolioProject-LondonCrimeDashboard
+
 ### **Data Source**
 The data used is was extracted from the publically available source from the *MPS Crime Dashboard* on the MPS website, along with the related data definitions. Please note that, this data sets is updated monthly at the on the 6th of the month. Data runs until the end of the month prior.
 
@@ -37,7 +39,7 @@ Also used in the creation of this data was a .shp file provided by the Great Lon
 - Line Forecast Chart of the Sum of Offences by Month
 8.	Assemble as a Dashboard and Publish
 
-### Insights
+### **Insights**
 
 The Following Insights were gleaned from the dashboard:
 
