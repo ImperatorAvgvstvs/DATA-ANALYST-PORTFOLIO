@@ -3,11 +3,11 @@
 Welcome to the Excel section of the Data Portfolio, here you can find various different projects including:
 
 
-## Data Visualisation for Predictive Analysis of London Crime
+## Dashboard for Sales Data Visualisation
 
 ### Summary
 
-### Data Source
+In this project I created an interactive dashboard which visualises some key sales metrics for the fictonal Coffe Bean Retailer "Cool Beans". It utilises a variety of excel features including the XLOOKUP and INDEX functions in conjunction with Pivot Tables, Pivot Charts, Slicers and Pivot Timeines. 
 
 ## Data Cleaning of Sales Data from Cycle Shop
 
