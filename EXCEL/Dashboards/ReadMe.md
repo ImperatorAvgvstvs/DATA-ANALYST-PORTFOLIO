@@ -4,7 +4,7 @@
 
 In this project I created an interactive dashboard which visualises some key sales metrics for the fictonal Coffe Bean Retailer "Cool Beans". It utilises a variety of excel features including the XLOOKUP and INDEX functions in conjunction with Pivot Tables, Pivot Charts, Slicers and Pivot Timeines. 
 
-### Process and Insights
+### Process
 
 1. Read through the three data sets for orders, customers and products, get some familiarity with the data sets and identify the primary keys of the data sets; here they would be both the Order ID and Customer ID fields
 2. Use both Index and XLOOKUP functions to retrieve data from the customer and products data sets and bring them into the order data set. The fields retrieved include:
