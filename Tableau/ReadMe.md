@@ -16,7 +16,7 @@ Specifically, the data set used was the **Total Notifiable Offence** (TNO) data 
 
 Also used in the creation of this data was a .shp file provided by the Great London Authority on the London Data Store, which provided the Statistical GIS Boundary Files for London Borough visualisation in Tableau.
 
-### **Process and Insights**
+### **Process**
 
 1.	Import the raw data in the form of the downloaded .csv file into Excel Power Query
 2.	Clean Data in Power Query to make it useable by Tableau by performing the following steps
