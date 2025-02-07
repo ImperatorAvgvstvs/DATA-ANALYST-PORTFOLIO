@@ -100,7 +100,7 @@ The approach taken in this project includes:
 - Plotted the **ROC curve** to visualise model effectiveness  
 
 ### 🔑 Key Findings:  
-- The model achieved **high accuracy and precision**, confirming its effectiveness in predicting employees whow would not leave.
+- The model achieved **high accuracy and precision**, confirming its effectiveness in predicting employees whow would **not** leave.
 - **However** the objective of the model was to identify those who would would leave, for which it had low recall and accuracy scores. This could be due to the high class imabalance and more people tend to stay at companies than leave. To rectify this in another model, the use of under or oversampling may help rectify this 
 - The **ROC curve** indicated a strong predictive capability  
 - Identified potential areas for improvement, such as using **ensemble models** for comparison  
