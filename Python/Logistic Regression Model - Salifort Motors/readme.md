@@ -1,7 +1,7 @@
 # 📌 Employee Attrition Prediction using Logistic Regression  
 
 ## 📝 Project Summary  
-This project focuses on building a **logistic regression model** to predict **employee attrition** for **Salifort Motors**, a large consulting firm. The aim is to provide **data-driven insights** to the **Human Resources (HR) department** to help them identify employees who may leave the company.  
+This project focuses on building a **logistic regression model** to predict **employee attrition** for **Salifort Motors**, a large fictional consulting firm. The aim is to provide **data-driven insights** to the **Human Resources (HR) department** to help them identify employees who may leave the company.  
 
 By leveraging **machine learning and statistical analysis**, this project delivers insights that can assist in **retention strategies** and **workforce planning**.  
 
@@ -50,7 +50,6 @@ The approach taken in this project includes:
 ### 🔑 Key Findings:  
 - No significant missing values were present  
 - Certain categorical variables required encoding for compatibility with **logistic regression**  
-- The dataset was balanced, ensuring no **bias** in predictions  
 
 ---
 
@@ -87,7 +86,7 @@ The approach taken in this project includes:
 - Implemented a **confusion matrix** to evaluate classification results  
 
 ### 🔑 Key Findings:  
-- The model successfully identified employees at risk of leaving  
+- The model successfully identified employees who were not at risk of leaving  
 - Certain features had higher weight in prediction (e.g., satisfaction level, salary)  
 
 ---
@@ -101,7 +100,7 @@ The approach taken in this project includes:
 - Plotted the **ROC curve** to visualise model effectiveness  
 
 ### 🔑 Key Findings:  
-- The model achieved **high accuracy and precision**, confirming its effectiveness  
+- The model achieved **high accuracy and precision**, confirming its effectiveness in predicting employees whow would not leave. 
 - The **ROC curve** indicated a strong predictive capability  
 - Identified potential areas for improvement, such as using **ensemble models** for comparison  
 
