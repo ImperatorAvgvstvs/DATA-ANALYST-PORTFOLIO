@@ -9,7 +9,7 @@ This Project attempts to answer, with an array of simple and complex data visual
 
 Throughout the project I make use of a variety of libararies including Pandas, Cufflinks and Plotly Express within a Jupyter Notebook
 
-## **Machine Learning Model - Logistic Regression Analysis of Salifort Motors Employee Satisfaction**
+## **Machine Learning Models - Logistic Regression, Decision Tree and Random Forest Analysis of Salifort Motors Employee Satisfaction**
 
 ### **Summary**
 This project focuses on building a logistic regression model to predict employee attrition for Salifort Motors, a large consulting firm. The aim is to provide data-driven insights to the Human Resources (HR) department to help them identify employees who may leave the company.
